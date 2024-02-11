@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Center(child:Text("NIMBU",textAlign: TextAlign.center,style:TextStyle(color: Color.fromARGB(255, 24, 236, 208))),),
+      home: Center(child:Text("MY FIRST APPLICATION",textAlign: TextAlign.center,style:TextStyle(color: Color.fromARGB(255, 24, 236, 208))),),
     );
   }
 }
