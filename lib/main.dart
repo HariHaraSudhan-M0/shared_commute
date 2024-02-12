@@ -8,8 +8,30 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Center(child:Text("shared commute",textAlign: TextAlign.center,style:TextStyle(color: Color.fromARGB(255, 24, 236, 208))),),
+    return  MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home:Scaffold(
+        appBar: AppBar(
+          title: Text('Shared commute'),
+          backgroundColor: Colors.pinkAccent,
+        ),
+        body: Text('body'),
+        backgroundColor: Color.fromARGB(255, 235, 184, 244),
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.pinkAccent,
+          items:
+          [BottomNavigationBarItem(
+            label: 'home',
+            icon: Icon(Icons.home), ),
+            BottomNavigationBarItem(
+            label: 'settings',
+            icon: Icon(Icons.settings), ),
+            BottomNavigationBarItem(
+            label: 'favorite',
+            icon: Icon(Icons.favorite),)
+          ],
+        ),
+      ),
     );
   }
 }
