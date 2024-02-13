@@ -16,8 +16,9 @@ class MyApp extends StatelessWidget {
           title: const Text('Shared commute'),
           backgroundColor: Colors.pinkAccent,
         ),
-        body: const Center(child: Text('body')),
-        backgroundColor:const Color.fromARGB(255, 235, 184, 244),
+        body: Center(
+            child: ElevatedButton(onPressed: () {}, child: Text('SUBMIT'))),
+        backgroundColor: const Color.fromARGB(255, 235, 184, 244),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.pinkAccent,
           items: const [
