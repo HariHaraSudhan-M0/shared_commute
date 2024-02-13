@@ -17,7 +17,9 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.pinkAccent,
         ),
         body: Center(
-            child: ElevatedButton(onPressed: () {}, child: Text('SUBMIT'))),
+            child: ElevatedButton(onPressed: () {
+              print('HELLOOO');
+            }, child: Text('SUBMIT'))),
         backgroundColor: const Color.fromARGB(255, 235, 184, 244),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.pinkAccent,
