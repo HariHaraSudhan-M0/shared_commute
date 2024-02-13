@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String buttonName='SUBMIT';
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +25,10 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
             child: ElevatedButton(onPressed: () {
-              print('HELLOOO');
-            }, child: Text('SUBMIT'))),
+              setState(() {
+                buttonName='you have submited';
+              });
+            }, child: Text(buttonName))),
         backgroundColor: const Color.fromARGB(255, 235, 184, 244),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.pinkAccent,
