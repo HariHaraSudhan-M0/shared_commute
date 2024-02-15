@@ -1,7 +1,9 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -12,8 +14,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String buttonName='SUBMIT';
-
+  String buttonName = 'SUBMIT';
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,11 +26,26 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.pinkAccent,
         ),
         body: Center(
-            child: ElevatedButton(onPressed: () {
-              setState(() {
-                buttonName='you have submited';
-              });
-            }, child: Text(buttonName))),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    buttonName = 'you have submited';
+                  });
+                },
+                child: Text(buttonName)),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  buttonName = 'you have submited';
+                });
+              },
+              child: Text(buttonName),
+            )
+          ],
+        )),
         backgroundColor: const Color.fromARGB(255, 235, 184, 244),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.pinkAccent,
@@ -44,8 +61,17 @@ class _MyAppState extends State<MyApp> {
             BottomNavigationBarItem(
               label: 'favorite',
               icon: Icon(Icons.favorite),
-            )
+            ),
+            BottomNavigationBarItem(label:'help',
+            icon:Icon(Icons.home_max)
+             )
           ],
+          currentIndex: currentIndex,
+          onTap: (int index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
         ),
       ),
     );
